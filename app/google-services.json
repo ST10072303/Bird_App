@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "251189472041",
+    "project_id": "bird-base-26ef7",
+    "storage_bucket": "bird-base-26ef7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251189472041:android:a10c139563952d6820a538",
+        "android_client_info": {
+          "package_name": "com.example.birdnest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQHEc_iKY0wpRirbux9gqmrqGsZXB5CxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251189472041:android:88a64a6730a6403820a538",
+        "android_client_info": {
+          "package_name": "com.example.birdnest_apk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQHEc_iKY0wpRirbux9gqmrqGsZXB5CxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

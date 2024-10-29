@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">BirdNest_APK</string>
+    <string name="mapbox_access_token" translatable="false" tools:ignore="UnusedResources">pk.eyJ1Ijoic3QxMDEwMzcwNCIsImEiOiJjbTE5YWJ1cjcwM3UyMmpyMTU4dXoxb2IxIn0.3SGuVJBtoxgfraWYUUqrtQ</string>
+
+</resources>
