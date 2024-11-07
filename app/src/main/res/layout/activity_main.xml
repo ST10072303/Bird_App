@@ -7,76 +7,57 @@
     android:background="#C2D8BD"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnSet"
-        android:layout_width="55dp"
-        android:layout_height="49dp"
-        android:background="#C2D8BD"
-        android:drawableTop="@drawable/setiings"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageTube"
+        android:layout_width="61dp"
+        android:layout_height="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSight"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintHorizontal_bias="0.894"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.831"
+        app:srcCompat="@drawable/youtube" />
 
-    <TextView
-        android:id="@+id/txtOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign-out"
-        android:textAlignment="center"
-        android:textColor="#B51E1E"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageX"
+        android:layout_width="61dp"
+        android:layout_height="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnHome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="107dp"
-        android:layout_height="35dp"
-        android:text="Home"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.831"
+        app:srcCompat="@drawable/twitter" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="308dp"
-        android:layout_height="233dp"
+        android:layout_width="341dp"
+        android:layout_height="217dp"
         android:background="#C2D8BD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.184"
+        app:layout_constraintVertical_bias="0.11"
         app:srcCompat="@drawable/bird5" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="318dp"
-        android:layout_height="111dp"
-        android:text="Explore the wonders of bird watching, Find local bird watching hotspots and getdirections to your selected hotspot"
+        android:layout_width="306dp"
+        android:layout_height="51dp"
+        android:text="Explore the wonders of bird watching"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.595" />
+        app:layout_constraintVertical_bias="0.437" />
 
     <Button
         android:id="@+id/btnHome"
@@ -122,17 +103,138 @@
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="219dp"
-        android:layout_height="48dp"
-        android:drawableLeft="@drawable/share"
-        android:text="share Your Bird Watching experience on Social"
+        android:layout_width="74dp"
+        android:layout_height="56dp"
+        android:drawableTop="@drawable/share"
+        android:text="share"
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/btnHome"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <ImageView
+        android:id="@+id/imageFace"
+        android:layout_width="61dp"
+        android:layout_height="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.414" />
+        app:layout_constraintVertical_bias="0.831"
+        app:srcCompat="@drawable/facebook" />
+
+    <ImageView
+        android:id="@+id/imageInsta"
+        android:layout_width="61dp"
+        android:layout_height="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.831"
+        app:srcCompat="@drawable/instagram" />
+
+    <TextView
+        android:id="@+id/txtSignout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign-out"
+        android:textColor="#FF1212"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSight"
+        app:layout_constraintVertical_bias="0.567" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BirdNest"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bird1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.076"
+        app:srcCompat="@drawable/bird1" />
+
+    <ImageView
+        android:id="@+id/bird2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.844"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.076"
+        app:srcCompat="@drawable/bird2" />
+
+    <ImageView
+        android:id="@+id/bird3"
+        android:layout_width="73dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.076"
+        app:srcCompat="@drawable/bird3" />
+
+    <TextView
+        android:id="@+id/txtB1"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:drawableTop="@drawable/sound"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/btnHome"
+        app:layout_constraintEnd_toStartOf="@+id/txtB3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bird1"
+        app:layout_constraintVertical_bias="0.088" />
+
+    <TextView
+        android:id="@+id/txtB2"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:drawableTop="@drawable/sound"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/imageFace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtB3"
+        app:layout_constraintTop_toBottomOf="@+id/bird2"
+        app:layout_constraintVertical_bias="0.244" />
+
+    <TextView
+        android:id="@+id/txtB3"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:drawableTop="@drawable/sound"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/btnSearch"
+        app:layout_constraintEnd_toStartOf="@+id/txtB2"
+        app:layout_constraintStart_toEndOf="@+id/txtB1"
+        app:layout_constraintTop_toBottomOf="@+id/bird3"
+        app:layout_constraintVertical_bias="0.088" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

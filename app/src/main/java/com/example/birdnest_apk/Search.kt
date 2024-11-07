@@ -30,7 +30,6 @@ import retrofit2.Response
 //import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
 
-
 class Search : AppCompatActivity(),PermissionsListener{
     lateinit var mapView : MapView
     lateinit var permissionsManager: PermissionsManager
@@ -57,80 +56,57 @@ class Search : AppCompatActivity(),PermissionsListener{
             val intent = Intent(this, Sightings::class.java)
             startActivity(intent)
         }
-
         // Create a map programmatically and set the initial camera
         mapView =findViewById(R.id.mapView)
 
+        if (PermissionsManager.areLocationPermissionsGranted(this)) {
+            // Permission sensitive logic called here, such as activating the Maps SDK's LocationComponent to show the device's location
+            mapView.mapboxMap.setCamera(
+                CameraOptions.Builder()
+                    .center(Point.fromLngLat(28.218, -25.732))
+                    .pitch(0.0)
+                    .zoom(12.0)
+                    .bearing(180.0)
+                    .build()
+            )
+
+            mapView.location.enabled = true
+
+            CoroutineScope(Dispatchers.IO).launch {
+                val data = ebirdRetrofit.getBirdInfo("-25.732", "28.218","75unmc3na5uv", "true")
+
+                Log.v("appDebug",data.raw().toString())
+
+                if (data.isSuccessful)
+
+                {     val locationList = data.body()
+
+                    launch(Dispatchers.Main) {
+                        pointAnnotationManager=mapView.annotations.createPointAnnotationManager()
+                        locationList?.forEach{obse->
 
 
-            if (PermissionsManager.areLocationPermissionsGranted(this)) {
-                // Permission sensitive logic called here, such as activating the Maps SDK's LocationComponent to show the device's location
-                mapView.mapboxMap.setCamera(
-                    CameraOptions.Builder()
-                        .center(Point.fromLngLat(28.218, -25.732))
-                        .pitch(0.0)
-                        .zoom(12.0)
-                        .bearing(180.0)
-                        .build()
-                )
+                            val pointAnnotationOptions = PointAnnotationOptions()
+                                .withPoint(Point.fromLngLat(obse.lng,obse.lat))
 
-                mapView.location.enabled = true
+                                .withIconImage(getDrawable(R.drawable.red_marker)!!.toBitmap())
 
+                            pointAnnotationManager.create(pointAnnotationOptions)
 
-                CoroutineScope(Dispatchers.IO).launch {
-                    val data = ebirdRetrofit.getBirdInfo("-25.732", "28.218","75unmc3na5uv", "true")
-
-                    Log.v("appDebug",data.raw().toString())
-
-                        if (data.isSuccessful)
-
-
-                        {     val locationList = data.body()
-
-                            launch(Dispatchers.Main) {
-                                pointAnnotationManager=mapView.annotations.createPointAnnotationManager()
-                                locationList?.forEach{obse->
-
-
-                                    val pointAnnotationOptions = PointAnnotationOptions()
-                                        .withPoint(Point.fromLngLat(obse.lng,obse.lat))
-
-                                        .withIconImage(getDrawable(R.drawable.red_marker)!!.toBitmap())
-
-                                    pointAnnotationManager.create(pointAnnotationOptions)
-
-                                }
-
-                            }
                         }
-
-                    else
-
-                        {
-
-                            Log.v("appDebug","Something went wrong")
-                        }
-
-
-
-
-
-
+                    }
                 }
+                else
+                {
 
-
-            } else {
-                permissionsManager = PermissionsManager(this)
-                permissionsManager.requestLocationPermissions(this)
+                    Log.v("appDebug","Something went wrong")
+                }
             }
 
-
-
-       /* mapView.getMapboxMap().loadStyleUri(Style.MAPBOX_STREETS){
-            pointAnnotationManager=mapView.annotations.createPointAnnotationManager()
-
-        }*/
-        // Add the map view to the activity (you can also add it to other views as a child)
+        } else {
+            permissionsManager = PermissionsManager(this)
+            permissionsManager.requestLocationPermissions(this)
+        }
 
 
         Log.v("appdebug",mapView.mapboxMap.cameraState.zoom.toString())
@@ -149,24 +125,3 @@ class Search : AppCompatActivity(),PermissionsListener{
 
     }
 }
-   /* private fun bird(observation: List<ObservationsItem>){
-        observation.forEach{obse->
-
-
-            val pointAnnotationOptions = PointAnnotationOptions()
-                .withPoint(Point.fromLngLat(obse.lng,obse.lat))
-
-                .withIconImage(getDrawable(R.drawable.red_marker)!!.toBitmap())
-
-        }
-
-    }
-
-
-}*/
-
-
-
-
-
-
